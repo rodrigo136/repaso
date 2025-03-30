@@ -27,13 +27,15 @@
                         const li = document.createElement('li');
                         li.innerHTML = `
                             <p><strong>${digimon.name}</strong> - Nivel: ${digimon.level}</p>
+                            <img src = "${digimon.img}" alt="${digimon.name}" width"100">
                         `;
                         digimonList.appendChild(li)
                     });
                     document.getElementById('loading').style.display = 'none';
                 })
                 .catch(error => {
-                    
+                    console.error('Error: ', error);
+                    document.getElementById('loading').style.display = 'none';
                 });
         });
     </script>
